@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: Trigger BE build
       if: ${{ github.repository == 'Anuken/Mindustry' }}
       run: |
@@ -22,7 +22,7 @@ jobs:
         git config --global user.name "Github Actions"
         git push https://Anuken:${{ secrets.API_TOKEN_GITHUB }}@github.com/Anuken/MindustryBuilds ${BNUM}
     - name: Set up JDK 17
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v1
       with:
         java-version: 17
     - name: Setup Gradle
